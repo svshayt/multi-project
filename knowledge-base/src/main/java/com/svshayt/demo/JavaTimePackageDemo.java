@@ -9,6 +9,7 @@ import java.time.Month;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class JavaTimePackageDemo {
 
@@ -18,6 +19,10 @@ public class JavaTimePackageDemo {
         localTimeDemo();
         localDateDemo();
         localDateTimeDemo();
+        zonedDateTimeDemo();
+        zoneOffsetDemo();
+        zoneIdDemo();
+        dateTimeFormatterDemo();
     }
 
     public static void durationDemo() {
@@ -128,5 +133,42 @@ public class JavaTimePackageDemo {
 
         System.out.println(localDateTime);
         System.out.println(instant);
+    }
+
+    public static void zonedDateTimeDemo() {
+        ZonedDateTime zonedDateTime = ZonedDateTime.now(ZoneId.of("America/New_York"));
+
+        System.out.println(zonedDateTime); // 2024-11-18T11:25:30.460883-05:00[America/New_York]
+
+    }
+
+    public static void zoneOffsetDemo() {
+        ZoneOffset offset = ZoneOffset.ofHours(2);
+
+        System.out.println(offset);
+    }
+
+    public static void zoneIdDemo() {
+        ZoneId zoneId = ZoneId.systemDefault();
+
+        System.out.println(zoneId); // Europe/Moscow
+    }
+
+    public static void dateTimeFormatterDemo() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        String formattedDate = LocalDateTime.now().format(formatter); // форматирование
+        LocalDateTime parsedDate = LocalDateTime.parse("01-01-2021 14:30", formatter); // разбор строки
+
+        System.out.println(formatter);
+        System.out.println(formattedDate);
+        System.out.println(parsedDate);
+
+        DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String formattedDate2 = LocalDateTime.now().format(formatter2);
+        LocalDateTime parsedDate2 = LocalDateTime.parse("2021-01-01 14:30:00", formatter2);
+
+        System.out.println(formatter2);
+        System.out.println(formattedDate2);
+        System.out.println(parsedDate2);
     }
 }
