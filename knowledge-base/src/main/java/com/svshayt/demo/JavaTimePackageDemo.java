@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Month;
+import java.time.Period;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
@@ -23,6 +24,7 @@ public class JavaTimePackageDemo {
         zoneOffsetDemo();
         zoneIdDemo();
         dateTimeFormatterDemo();
+        periodDemo();
     }
 
     public static void durationDemo() {
@@ -170,5 +172,13 @@ public class JavaTimePackageDemo {
         System.out.println(formatter2);
         System.out.println(formattedDate2);
         System.out.println(parsedDate2);
+    }
+
+    public static void periodDemo() {
+        Period period = Period.of(2, 3, 4); // 2 года, 3 месяца, 4 дня
+        Period betweenDates = Period.between(LocalDate.of(2020, 1, 1), LocalDate.of(2022, 1, 1)); // разница между датами
+
+        System.out.println(period); // P2Y3M4D
+        System.out.println(betweenDates); //P2Y
     }
 }
