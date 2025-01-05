@@ -1,0 +1,5 @@
+12345
+Hello, World!
+😊
+Line with special chars: @#$%^&*()
+End of file.
