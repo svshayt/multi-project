@@ -1,4 +1,4 @@
-package com.svshayt.model;
+package com.svshayt.knowledgebase.model;
 
 import lombok.Builder;
 import lombok.Getter;
