@@ -1,3 +1,4 @@
 rootProject.name = 'multi-project'
 include 'knowledge-base'
+include 'knowledge-base-db-migration'
 
